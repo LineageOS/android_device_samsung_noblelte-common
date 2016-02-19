@@ -1,2 +1,0 @@
-add_lunch_combo cm_treltexx-eng
-add_lunch_combo cm_treltexx-userdebug

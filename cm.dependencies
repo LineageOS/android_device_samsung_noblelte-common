@@ -20,15 +20,15 @@
         "target_path": "hardware/samsung_slsi-cm/exynos5"
     },
     {
-        "repository": "android_hardware_samsung_slsi-cm_exynos5433",
-        "target_path": "hardware/samsung_slsi-cm/exynos5433"
+        "repository": "android_hardware_samsung_slsi-cm_exynos7420",
+        "target_path": "hardware/samsung_slsi-cm/exynos7420"
     },
     {
         "repository": "android_hardware_samsung_slsi-cm_openmax",
         "target_path": "hardware/samsung_slsi-cm/openmax"
     },
     {
-        "repository": "android_kernel_samsung_trelte",
-        "target_path": "kernel/samsung/trelte"
+        "repository": "android_kernel_samsung_noble",
+        "target_path": "kernel/samsung/noble"
     }
 ]

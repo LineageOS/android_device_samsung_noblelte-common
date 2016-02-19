@@ -11,7 +11,7 @@ LOCAL_C_INCLUDES := \
     system/media/camera/include
 
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
-LOCAL_MODULE := camera.universal5433
+LOCAL_MODULE := camera.universal7420
 LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_SHARED_LIBRARY)

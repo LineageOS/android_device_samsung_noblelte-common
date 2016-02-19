@@ -18,7 +18,7 @@ etc/wifi/nvram_net.txt_murata
 ### NFC
 etc/sec_s3fwrn5_rfreg_thl.bin
 etc/sec_s3fwrn5_rfreg.bin
-lib/hw/nfc_nci.universal5433.so
+lib/hw/nfc_nci.universal7420.so
 vendor/firmware/sec_s3fwrn5_firmware.bin
 
 ### IR Blaster
@@ -69,7 +69,7 @@ vendor/firmware/seiren_fw_dram.bin
 vendor/firmware/seiren_fw_sram.bin
 
 ### Camera
-lib/hw/camera.universal5433.so
+lib/hw/camera.universal7420.so
 lib/libexynoscamera.so
 lib/libhwjpeg.so
 lib/libvdis.so
@@ -78,7 +78,7 @@ vendor/firmware/setfile_imx240.bin
 
 # GPS
 bin/gpsd
-lib/hw/gps.default.so:lib/hw/gps.universal5433.so
+lib/hw/gps.default.so:lib/hw/gps.universal7420.so
 lib/libwrappergps.so
 
 ### HWC
@@ -92,7 +92,7 @@ lib/omx/libOMX.Exynos.AVC.Encoder.so
 ### Sensors
 etc/lhd.conf
 bin/lhd
-lib/hw/sensors.universal5433.so
+lib/hw/sensors.universal7420.so
 
 ### Widevine
 lib/liboemcrypto.so
