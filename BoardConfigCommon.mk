@@ -47,7 +47,11 @@ TARGET_POWERHAL_VARIANT := samsung
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Kernel
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/samsung/noble
+TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
