@@ -1,68 +1,70 @@
 ### Bluetooth
-vendor/firmware/bcm4358A0_V0033.0000.hcd
-vendor/firmware/bcm4358A1_V0051.0080.hcd
+vendor/firmware/bcm4359B0_V0019.0000.hcd
+vendor/firmware/bcm4359B1_V0030.0044_wisol.hcd
+vendor/firmware/bcm4359B1_V0030.0044.hcd
+vendor/firmware/bcm4359B1_V0043.0055_wisol.hcd
+vendor/firmware/bcm4359B1_V0043.0055.hcd
 
 ### Wifi
-etc/wifi/bcmdhd_apsta.bin
-etc/wifi/bcmdhd_ibss.bin
-etc/wifi/bcmdhd_mfg.bin
-etc/wifi/bcmdhd_sta.bin
+etc/wifi/bcmdhd_apsta.bin_b1
+etc/wifi/bcmdhd_ibss.bin_b0
+etc/wifi/bcmdhd_ibss.bin_b1
+etc/wifi/bcmdhd_mfg.bin_b0
+etc/wifi/bcmdhd_mfg.bin_b1
+etc/wifi/bcmdhd_mfg2.bin_b1
+etc/wifi/bcmdhd_sta.bin_b0
+etc/wifi/bcmdhd_sta.bin_b1
 etc/wifi/cred.conf
-etc/wifi/nvram_mfg.txt
-etc/wifi/nvram_mfg.txt_a0
-etc/wifi/nvram_mfg.txt_murata
-etc/wifi/nvram_net.txt
-etc/wifi/nvram_net.txt_a0
-etc/wifi/nvram_net.txt_murata
+etc/wifi/nvram_mfg.txt_b0
+etc/wifi/nvram_mfg.txt_b1
+etc/wifi/nvram_mfg.txt_murata_b1
+etc/wifi/nvram_mfg.txt_wisol_b1
+etc/wifi/nvram_net.txt_b0
+etc/wifi/nvram_net.txt_b1
+etc/wifi/nvram_net.txt_murata_b1
+etc/wifi/nvram_net.txt_wisol_b1
 
 ### NFC
-etc/sec_s3fwrn5_rfreg_thl.bin
-etc/sec_s3fwrn5_rfreg.bin
+etc/sec_s3fwrn5s_rfreg_for_old_hw.bin
+etc/sec_s3fwrn5s_rfreg.bin
 lib/hw/nfc_nci.universal7420.so
-vendor/firmware/sec_s3fwrn5_firmware.bin
-
-### IR Blaster
-lib/hw/consumerir.exynos5.so
+vendor/firmware/sec_s3fwrn5s_firmware.bin
 
 ### Media
-# hevc for v4l2
-vendor/firmware/hevc_fw.bin
 # S5P Multi Format Codec
 vendor/firmware/mfc_fw.bin
 # Image subsystem
+vendor/firmware/fimc_is_fw2_2p2.bin
 vendor/firmware/fimc_is_fw2_imx240.bin
-vendor/firmware/fimc_is_ois_63A.bin
-vendor/firmware/fimc_is_ois_63B.bin
-vendor/firmware/companion_default_coef.bin
-vendor/firmware/companion_default_lsc.bin
+vendor/firmware/ois_fw_dom.bin
+vendor/firmware/ois_fw_sec_2.bin
+vendor/firmware/ois_fw_sec.bin
+vendor/firmware/companion_2p2_master_setfile.bin
+vendor/firmware/companion_2p2_mode_setfile.bin
+vendor/firmware/companion_fw_2p2_evt1.bin
 vendor/firmware/companion_fw_imx240_evt1.bin
 vendor/firmware/companion_imx240_master_setfile.bin
 vendor/firmware/companion_imx240_mode_setfile.bin
 
 ### Audio
-etc/firmware/florida-dsp1-edac.bin
-etc/firmware/florida-dsp1-edac.wmfw
-etc/firmware/florida-dsp2-tx-fb-meeting.bin
-etc/firmware/florida-dsp2-tx-fb-meeting.wmfw
-etc/firmware/florida-dsp2-tx-nb.wmfw
-etc/firmware/florida-dsp2-tx-swb.wmfw
-etc/firmware/florida-dsp2-tx-wb.wmfw
-etc/firmware/florida-dsp3-ez2-control.wmfw
-etc/firmware/florida-dsp3-lpsd-control.bin
-etc/firmware/florida-dsp3-tx-nb.bin
-etc/firmware/florida-dsp3-tx-nb.wmfw
-etc/firmware/florida-dsp3-tx-swb-conversation.bin
-etc/firmware/florida-dsp3-tx-swb-interview.bin
-etc/firmware/florida-dsp3-tx-swb.wmfw
-etc/firmware/florida-dsp3-tx-wb-meeting.bin
-etc/firmware/florida-dsp3-tx-wb-meeting.wmfw
-etc/firmware/florida-dsp3-tx-wb.bin
-etc/firmware/florida-dsp3-tx-wb.wmfw
-etc/firmware/florida-dsp4-dsm.wmfw
-etc/firmware/florida-dsp4-rx-anc-nb.bin
-etc/firmware/florida-dsp4-rx-anc-nb.wmfw
-etc/firmware/florida-dsp4-rx-anc-wb.bin
-etc/firmware/florida-dsp4-rx-anc-wb.wmfw
+etc/firmware/audience-es804-data.bin
+etc/firmware/audience-es804-fw.bin
+etc/firmware/clearwater-dsp3-tx-nb.bin
+etc/firmware/clearwater-dsp3-tx-swb-interview.bin
+etc/firmware/clearwater-dsp3-tx-wb.bin
+etc/firmware/clearwater-dsp4-rx-anc-nb.bin
+etc/firmware/clearwater-dsp4-rx-anc-wb.bin
+etc/firmware/clearwater-dsp6-lpsd-control.bin
+etc/firmware/clearwaterc-dsp2-tx-nb.wmfw
+etc/firmware/clearwaterc-dsp2-tx-swb.wmfw
+etc/firmware/clearwaterc-dsp2-tx-wb.wmfw
+etc/firmware/clearwaterc-dsp3-tx-nb.wmfw
+etc/firmware/clearwaterc-dsp3-tx-swb.wmfw
+etc/firmware/clearwaterc-dsp3-tx-wb.wmfw
+etc/firmware/clearwaterc-dsp4-rx-anc-nb.wmfw
+etc/firmware/clearwaterc-dsp4-rx-anc-wb.wmfw
+etc/firmware/clearwaterc-dsp5-dsm.wmfw
+etc/firmware/clearwaterc-dsp6-ez2-control.wmfw
 
 # Audio decoder
 vendor/firmware/seiren_fw_dram.bin
@@ -70,29 +72,39 @@ vendor/firmware/seiren_fw_sram.bin
 
 ### Camera
 lib/hw/camera.universal7420.so
+lib64/hw/camera.universal7420.so
+lib/libexynoscamera3.so
+lib64/libexynoscamera3.so
 lib/libexynoscamera.so
-lib/libhwjpeg.so
-lib/libvdis.so
-vendor/firmware/setfile_6d1.bin
+lib64/libexynoscamera.so
+lib/libsensorlistener.so
+lib64/libsensorlistener.so
+lib/libuniplugin.so
+lib64/libuniplugin.so
+vendor/firmware/setfile_2p2.bin
+vendor/firmware/setfile_4e6.bin
 vendor/firmware/setfile_imx240.bin
 
 # GPS
 bin/gpsd
 lib/hw/gps.default.so:lib/hw/gps.universal7420.so
+lib64/hw/gps.default.so:lib/hw/gps.universal7420.so
 lib/libwrappergps.so
+lib64/libwrappergps.so
 
 ### HWC
-vendor/lib/libmalicore.bc
 vendor/lib/egl/libGLES_mali.so
-vendor/lib/libRSDriverArm.so
+vendor/lib64/egl/libGLES_mali.so
 
 ### OMX
 lib/omx/libOMX.Exynos.AVC.Encoder.so
+lib64/omx/libOMX.Exynos.AVC.Encoder.so
 
 ### Sensors
 etc/lhd.conf
 bin/lhd
 lib/hw/sensors.universal7420.so
+lib64/hw/sensors.universal7420.so
 
 ### Widevine
 lib/liboemcrypto.so
@@ -104,26 +116,26 @@ vendor/lib/libwvm.so
 
 ### RIL
 lib/libsecnativefeature.so
+lib64/libsecnativefeature.so
 lib/libsec-ril.so
-
-### IR
-lib/hw/consumerir.exynos5.so
+lib64/libsec-ril.so
 
 ### Mobicore
 app/FFFFFFFF000000000000000000000001.drbin
 app/mcRegistry/07010000000000000000000000000000.tlbin
 app/mcRegistry/07060000000000000000000000000000.tlbin
+app/mcRegistry/08880000000000000000000000000000.tlbin
 app/mcRegistry/00060308060501020000000000000000.tlbin
-app/mcRegistry/02010000080300030000000000000000.tlbin
 app/mcRegistry/ffffffff00000000000000000000000a.tlbin
 app/mcRegistry/ffffffff00000000000000000000000b.tlbin
 app/mcRegistry/ffffffff00000000000000000000000c.tlbin
 app/mcRegistry/ffffffff00000000000000000000000d.tlbin
 app/mcRegistry/ffffffff00000000000000000000000e.tlbin
 app/mcRegistry/ffffffff00000000000000000000000f.tlbin
+app/mcRegistry/ffffffff00000000000000000000001f.tlbin
+app/mcRegistry/ffffffff00000000000000000000002a.tlbin
 app/mcRegistry/ffffffff000000000000000000000004.tlbin
 app/mcRegistry/ffffffff000000000000000000000005.tlbin
-app/mcRegistry/ffffffff000000000000000000000011.tlbin
 app/mcRegistry/ffffffff000000000000000000000012.tlbin
 app/mcRegistry/ffffffff000000000000000000000013.tlbin
 app/mcRegistry/ffffffff000000000000000000000014.tlbin
@@ -131,9 +143,14 @@ app/mcRegistry/ffffffff000000000000000000000016.tlbin
 app/mcRegistry/ffffffff000000000000000000000017.tlbin
 app/mcRegistry/ffffffff000000000000000000000018.tlbin
 app/mcRegistry/ffffffff000000000000000000000019.tlbin
+app/mcRegistry/ffffffff000000000000000000000021.tlbin
+app/mcRegistry/ffffffff000000000000000000000028.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000e.tlbin
 app/mcRegistry/ffffffffd00000000000000000000004.tlbin
 app/mcRegistry/ffffffffd00000000000000000000014.tlbin
 app/mcRegistry/ffffffffd00000000000000000000016.tlbin
+app/mcRegistry/ffffffffd00000000000000000000017.tlbin
+app/mcRegistry/fffffffff0000000000000000000001b.tlbin
+app/mcRegistry/fffffffff0000000000000000000001b.tlbin
 app/mcRegistry/fffffffff0000000000000000000001e.tlbin
