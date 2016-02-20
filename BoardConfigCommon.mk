@@ -1,4 +1,4 @@
-LOCAL_PATH := device/samsung/noble-common
+LOCAL_PATH := device/samsung/noblelte-common
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
@@ -50,7 +50,7 @@ TARGET_NO_SENSOR_PERMISSION_CHECK := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_SOURCE := kernel/samsung/noble
+TARGET_KERNEL_SOURCE := kernel/samsung/noblelte
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 
 # Use these flags if the board has a ext4 partition larger than 2gb
@@ -128,7 +128,7 @@ BOARD_USE_VP8ENC_SUPPORT := true
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Hardware
-BOARD_HARDWARE_CLASS += device/samsung/noble-common/cmhw
+BOARD_HARDWARE_CLASS += device/samsung/noblelte-common/cmhw
 
 # WIFI
 BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
@@ -176,4 +176,4 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7420
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-	device/samsung/noble-common/sepolicy
+	device/samsung/noblelte-common/sepolicy

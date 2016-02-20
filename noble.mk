@@ -1,6 +1,6 @@
-DEVICE_PACKAGE_OVERLAYS += device/samsung/noble-common/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay
 
-LOCAL_PATH := device/samsung/noble-common
+LOCAL_PATH := device/samsung/noblelte-common
 
 ###########################################################
 ### RAMDISK
@@ -280,4 +280,4 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/samsung/noble-common/noble-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/noblelte-common/noblelte-common-vendor.mk)
