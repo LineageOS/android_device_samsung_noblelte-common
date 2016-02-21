@@ -3,8 +3,6 @@ LOCAL_PATH := device/samsung/noblelte-common
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
-USE_CLANG_PLATFORM_BUILD := true
-
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := cm
