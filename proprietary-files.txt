@@ -87,8 +87,7 @@ vendor/firmware/setfile_imx240.bin
 
 # GPS
 bin/gpsd
-lib/hw/gps.default.so:lib/hw/gps.universal7420.so
-lib64/hw/gps.default.so:lib/hw/gps.universal7420.so
+lib64/hw/gps.default.so:lib64/hw/gps.universal7420.so
 lib/libwrappergps.so
 lib64/libwrappergps.so
 
