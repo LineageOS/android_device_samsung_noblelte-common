@@ -80,7 +80,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libargs=-d /dev/ttyS0 \
-    rild.libpath=/system/lib/libsec-ril.so \
+    rild.libpath=/system/lib64/libsec-ril.so \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10 \
     ro.telephony.ril_class=SlteRIL \
