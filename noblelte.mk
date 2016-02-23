@@ -191,9 +191,6 @@ PRODUCT_PACKAGES += \
 ###########################################################
 
 PRODUCT_PACKAGES += \
-    camera.universal7420
-
-PRODUCT_PACKAGES += \
     Snap
 
 PRODUCT_PROPERTY_OVERRIDES += \
