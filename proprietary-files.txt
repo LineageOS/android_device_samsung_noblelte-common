@@ -111,6 +111,7 @@ lib64/hw/sensors.universal7420.so
 
 ### Widevine
 lib/liboemcrypto.so
+lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libWVStreamControlAPI_L1.so
