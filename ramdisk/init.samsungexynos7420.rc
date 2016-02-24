@@ -409,6 +409,10 @@ on fs
     #check_fs /dev/block/platform/15570000.ufs/by-name/PERSDATA ext4
     mount ext4 /dev/block/platform/15570000.ufs/by-name/PERSDATA /persdata/absolute nosuid nodev barrier=1
 
+    # Keep these out of fstab to avoid mounting issues
+    mount emmc /dev/block/platform/15570000.ufs/by-name/PERSISTENT /persistent defaults defaults
+    mount ext4 /dev/block/platform/15570000.ufs/by-name/CPEFS /cpefs rw,errors=panic,noload wait,check
+
     chown system system /persdata
     chmod 0755 /persdata
     chown system system /persdata/absolute
