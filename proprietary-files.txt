@@ -71,12 +71,16 @@ vendor/firmware/seiren_fw_dram.bin
 vendor/firmware/seiren_fw_sram.bin
 
 ### Camera
+lib/hw/camera.exynos5.so
 lib/hw/camera.universal7420.so
+lib64/hw/camera.exynos5.so
 lib64/hw/camera.universal7420.so
 lib/libexynoscamera3.so
 lib64/libexynoscamera3.so
 lib/libexynoscamera.so
 lib64/libexynoscamera.so
+lib/libhwjpeg.so
+lib64/libhwjpeg.so
 lib/libsensorlistener.so
 lib64/libsensorlistener.so
 lib/libuniplugin.so
