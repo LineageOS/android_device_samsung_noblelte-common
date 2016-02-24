@@ -233,7 +233,7 @@ PRODUCT_PACKAGES += \
 ###########################################################
 
 PRODUCT_PACKAGES += \
-    libsamsung_symbols
+    libshammy
 
 ###########################################################
 ### DEFAULT PROPS

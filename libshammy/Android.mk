@@ -22,8 +22,24 @@ LOCAL_SRC_FILES := \
 
 LOCAL_SHARED_LIBRARIES := libbinder libui
 
-LOCAL_MODULE := libsamsung_symbols
+LOCAL_MODULE := libshammy
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_SHARED_LIBRARY)
+
+# 32bit version
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
+    Fence.cpp \
+    GraphicBufferMapper.cpp
+
+LOCAL_SHARED_LIBRARIES := libbinder libui
+
+LOCAL_MODULE := libshammy_32
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MULTILIB := 32
 
 include $(BUILD_SHARED_LIBRARY)
