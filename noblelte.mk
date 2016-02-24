@@ -8,10 +8,12 @@ LOCAL_PATH := device/samsung/noblelte-common
 
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
+    init.carrier.rc \
+    init.gps.rc \
     init.samsung.rc \
     init.samsungexynos7420.rc \
     init.samsungexynos7420.usb.rc \
-    init.samsungexynos7420.wifi.rc \
+    init.wifi.rc \
     ueventd.samsungexynos7420.rc
 
 ###########################################################
