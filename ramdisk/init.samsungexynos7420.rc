@@ -8,7 +8,7 @@ on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 on init
-    export LD_SHIM_LIBS "/system/lib/libexynoscamera.so|libshammy.so:/system/lib64/libexynoscamera.so|libshammy.so:/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|libshammy.so::/system/lib64/omx/libOMX.Exynos.AVC.Encoder.so|libshammy.so/system/bin/gpsd|libdmitry.so"
+    export LD_SHIM_LIBS "/system/lib/libexynoscamera.so|libshammy.so:/system/lib64/libexynoscamera.so|libshammy.so:/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|libshammy.so:/system/lib64/omx/libOMX.Exynos.AVC.Encoder.so|libshammy.so/system/bin/gpsd|libdmitry.so"
 
     start watchdogd
     mkdir /preload 0771 system system
