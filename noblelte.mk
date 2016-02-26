@@ -76,9 +76,12 @@ PRODUCT_PACKAGES += \
 ###########################################################
 
 PRODUCT_PACKAGES += \
+    libxml2 \
+    libprotobuf-cpp-full
+
+PRODUCT_PACKAGES += \
     libsecril-client \
-    libsecril-client-sap \
-    modemloader
+    libsecril-client-sap
 
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libargs=-d /dev/ttyS0 \
