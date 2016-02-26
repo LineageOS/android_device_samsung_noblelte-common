@@ -5,7 +5,7 @@
     PortName="lhd"
     NvStorageDir="/data/system/gps/"
 
-    LogDirectory="/storage/sdcard0/gps/broadcom/storage"
+    LogDirectory="/storage/emulated/0/gps/broadcom/storage"
 
     WakeLock="geo"
 

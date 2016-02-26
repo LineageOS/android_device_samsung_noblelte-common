@@ -26,6 +26,7 @@
 	<ctl name="Noise Gate Switch" value="0" />
 	<ctl name="HPOUT1 Digital Switch" value="1" />
 	<ctl name="HPOUT3 Digital Switch" value="1" />
+	<ctl name="SPK Enable Switch" value="Enable" />
 
 	<ctl name="HPOUT1 DRE Switch" value="0" />
 	<ctl name="HPOUT3 DRE Switch" value="0" />
@@ -1209,6 +1210,15 @@
 		<path name="media-bt-sco-headset-in" />
 	</path>
 
+	<!-- jam voice input -->
+	<path name="recording-jam-mic">
+		<path name="media-mic" />
+	</path>
+
+	<path name="recording-jam-headset-mic">
+		<path name="media-headset-mic" />
+	</path>
+
 	<!-- interview input -->
 	<path name="interview-mic">
 		<ctl name="Sample Rate 2" value="24kHz" />
@@ -2273,6 +2283,7 @@
 		<param name="HPOUT3 Digital Switch" id="0" />
 		<param name="HPOUT1 Digital Switch" id="1" />
 		<param name="HPOUT3 Digital Switch" id="1" />
+		<param name="SPK Enable Switch" id="0" />
 	</path>
 
 </mixer>

@@ -1186,6 +1186,18 @@
 		<ctl name="AIF1TX2 Input 1 Volume" value="32" />
 	</path>
 
+	<!-- jam voice recording input volume -->
+	<path name="gain-recording-jam-mic">
+		<ctl name="IN1L Digital Volume" value="128" />
+		<ctl name="LHPF1 Input 1 Volume" value="32" />
+	</path>
+
+	<path name="gain-recording-jam-headset-mic">
+		<ctl name="IN2L Volume" value="31" />
+		<ctl name="IN2L Digital Volume" value="128" />
+		<ctl name="LHPF1 Input 1 Volume" value="32" />
+	</path>
+
 	<!-- interview input volume -->
 	<path name="gain-interview-mic">
 		<ctl name="IN1L Digital Volume" value="152" />
