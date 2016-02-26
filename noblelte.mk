@@ -132,12 +132,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.sec_hal=true
 
 ###########################################################
-### BLUETOOTH
-###########################################################
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
-
-###########################################################
 ### AUDIO
 ###########################################################
 
