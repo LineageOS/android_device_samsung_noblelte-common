@@ -1,0 +1,58 @@
+on boot
+    # param_index = 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/multi_enter_load 800
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/single_enter_load 200
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/param_index 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 20000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 40000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 900000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 85
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads 75
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
+
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/multi_enter_load 360
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/multi_enter_time 79000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/multi_exit_load 240
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/multi_exit_time 299000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/single_enter_load 95
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/single_enter_time 199000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/single_exit_load 60
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/single_exit_time 99000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/single_cluster0_min_freq 800000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/multi_cluster0_min_freq 1200000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/param_index 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1200000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 89
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "65 1500000:75"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "59000 1300000:39000 1700000:19000"
+
+    # param_index = 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/param_index 1
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 59000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1200000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 95
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "65 1400000:68 1700000:73"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000
+
+    # param_index = 2
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/param_index 2
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 79000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1400000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 90
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "60 1300000:63 1500000:65 1700000:70"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000
+
+    # param_index = 3
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/param_index 3
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 99000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1600000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 85
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "60 1300000:63 1500000:65 1900000:70"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000

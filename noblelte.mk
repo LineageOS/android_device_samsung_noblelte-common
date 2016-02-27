@@ -10,6 +10,7 @@ PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
     init.carrier.rc \
     init.gps.rc \
+    init.power.rc \
     init.samsung.rc \
     init.samsungexynos7420.rc \
     init.samsungexynos7420.usb.rc \
