@@ -111,6 +111,7 @@ lib64/omx/libOMX.Exynos.AVC.Encoder.so
 ### Sensors
 etc/lhd.conf
 bin/lhd
+bin/bcm_sensorhub_a2.patch
 lib/hw/sensors.universal7420.so
 lib64/hw/sensors.universal7420.so
 
