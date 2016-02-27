@@ -3,7 +3,6 @@ import init.wifi.rc
 import init.baseband.rc
 import init.carrier.rc
 import init.samsung.rc
-
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
@@ -11,21 +10,28 @@ on init
     start watchdogd
     mkdir /preload 0771 system system
 
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage/emulated 0555 root root
+
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
     symlink /storage/usbdisk /mnt/usbdisk
+
+    export EXTERNAL_STORAGE /sdcard
+
+    #export SECONDARY_STORAGE /storage/extSdCard
 
     symlink /data/app /factory
 
     symlink /dev/block/platform/15570000.ufs/by-name/STEADY /dev/block/steady
     symlink /dev/block/platform/15570000.ufs/by-name/PERSISTENT /dev/block/persistent
 
-on post-fs
-    # Increase max readahead size to 256 KB
-    write /sys/block/sda/queue/read_ahead_kb 256
 
 on post-fs-data
+    mkdir /data/media 0770 media_rw media_rw
+
     setprop vold.post_fs_data_done 1
 
 # Permissions for audio
@@ -44,10 +50,11 @@ on post-fs-data
     chown system radio /efs/maxim/temp_cal
     chown system radio /efs/maxim/rdc_cal
     chmod 0660 /efs/maxim/temp_cal
-    chmod 0660 /efs/maxim/rdc_cal 
+    chmod 0660 /efs/maxim/rdc_cal
     chown media system /data/firmware
 
     # Permissions Camera
+    mkdir /data/camera 0770 media system
     chown system radio /sys/class/camera/rear/rear_camfw
     chown system radio /sys/class/camera/rear/rear_camfw_full
     chown system radio /sys/class/camera/rear/rear_checkfw_user
@@ -60,6 +67,7 @@ on post-fs-data
     chown system radio /sys/class/camera/rear/isp_core
     chown system radio /sys/class/camera/rear/fw_update
     chown system radio /sys/class/camera/flash/rear_flash
+    chown media system /sys/class/camera/flash/torch_flash
     chown system radio /sys/class/camera/front/front_camfw
     chown system radio /sys/class/camera/front/front_camfw_full
     chown system radio /sys/class/camera/front/front_checkfw_factory
@@ -100,6 +108,10 @@ on post-fs-data
     chown system audio /sys/class/earsmart/control/extra_volume
     chown system audio /sys/class/earsmart/control/always_stream_fs_on
 
+#Private Mode
+    mkdir /mnt/shell/privatemode 0700 system system
+    mkdir /storage/Private 0000 system system	
+
 # permission for CHARGING
    chown system radio /sys/class/power_supply/battery/batt_discharging_check
    chown system radio /sys/class/power_supply/battery/batt_discharging_check_adc
@@ -107,6 +119,11 @@ on post-fs-data
    chown system radio /sys/class/power_supply/battery/batt_discharging_ntc_adc
    chown system radio /sys/class/power_supply/battery/batt_self_discharging_control
    chown system radio /sys/class/power_supply/battery/batt_inbat_wireless_cs100
+
+#Private Mode
+    mkdir /data/privatemode 0770 system system
+    chown system system /data/privatemode
+    restorecon /data/privatemode
 
 #NFC : create data/nfc for nv storage
     mkdir /data/nfc 0700 nfc nfc
@@ -395,21 +412,27 @@ on boot
 # SSWAP
     write /proc/sys/vm/swappiness 130
 
+#Private Mode
+service privatemode /system/bin/sdcard -r /data/privatemode /mnt/shell/privatemode 1000 1000
+    class late_start
+    oneshot
+
 on fs
     mount_all /fstab.samsungexynos7420
+    setprop ro.crypto.fuse_sdcard true
 
     #For Absolute Persistence Partition
     mkdir /persdata 0755 system system
     mkdir /persdata/absolute 0750 system system
 
     wait /dev/block/platform/15570000.ufs/by-name/PERSDATA
-    # check_fs is not supported on CM
-    #check_fs /dev/block/platform/15570000.ufs/by-name/PERSDATA ext4
+    check_fs /dev/block/platform/15570000.ufs/by-name/PERSDATA ext4
     mount ext4 /dev/block/platform/15570000.ufs/by-name/PERSDATA /persdata/absolute nosuid nodev barrier=1
 
     # Keep these out of fstab to avoid mounting issues
-    mount emmc /dev/block/platform/15570000.ufs/by-name/PERSISTENT /persistent defaults defaults
+    mount emmc /dev/block/platform/15570000.ufs/by-name/PERSISTENT /persistent defaults defaults		
     mount ext4 /dev/block/platform/15570000.ufs/by-name/CPEFS /cpefs rw,errors=panic,noload wait,check
+    mount emmc /dev/block/platform/15570000.ufs/by-name/HIDDEN /preload defaults voldmanaged=preload:auto
 
     chown system system /persdata
     chmod 0755 /persdata
@@ -564,6 +587,7 @@ on fs
     chown system radio /sys/class/sensors/barometer_sensor/vendor
     chown system radio /sys/class/sensors/barometer_sensor/name
     chown system radio /sys/class/sensors/barometer_sensor/calibration
+    chown system radio /sys/class/sensors/barometer_sensor/temperature
 
 # Magnetic_sensor
     chown system radio /sys/class/sensors/magnetic_sensor/raw_data
@@ -657,6 +681,7 @@ on fs
     chown system radio /sys/class/sensors/ssp_sensor/motor_test_poll_delay
     chown system radio /sys/class/sensors/ssp_sensor/ssp_flush
     chown system radio /sys/class/sensors/ssp_sensor/int_gyro_enable
+    chown system radio /sys/class/sensors/ssp_sensor/sensor_state
     chmod 0600 /dev/batch_io
     chown system system /dev/batch_io
 
@@ -686,8 +711,10 @@ on fs
     chown system system /sys/class/sec/tsp/brane
     chmod 0660 /sys/class/sec/tsp/brane
 
-# Radio
-    chmod 0644 /proc/cmdline
+# emergency firmware update
+on firmware
+    mount_all /fstab.samsungexynos7420.fwup
+    class_start firmware_update
 
 # ARGOSD
 service argos-daemon /system/bin/argosd
@@ -708,11 +735,13 @@ service vcsFPService /system/bin/vcsFPService
     user system
     group system
 
-# BIO FRAMEWORK : starts bio auth service
-service bauthserver /system/bin/bauthserver
+# FINGERPRINT FRAMEWORK : starts fingerprintd
+service fingerprintd /system/bin/fingerprintd
     class late_start
     user system
     group system
+
+
 
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
 service watchdogd /sbin/watchdogd 10 20
@@ -729,15 +758,29 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_bytes 62914560
     write /proc/sys/vm/dirty_background_bytes 20971520
 
+# LPM
+on property:ro.bootmode=charger
+    mount ext4 /dev/block/platform/15570000.ufs/by-name/SYSTEM /system support_scfs wait ro
+
 on property:ro.bootmode=charger
     wait /dev/block/platform/15570000.ufs/by-name/EFS
-    # check_fs is not supported on CM
-    #check_fs /dev/block/platform/15570000.ufs/by-name/EFS ext4
+    check_fs /dev/block/platform/15570000.ufs/by-name/EFS ext4
     mount ext4 /dev/block/platform/15570000.ufs/by-name/EFS /efs nosuid nodev noatime noauto_da_alloc,discard,journal_async_commit
+
+on property:ro.bootmode=charger
+    class_start charger
 
 service charger /charger
     seclabel u:r:healthd:s0
     class charger
+
+# Emergency Firmware Update
+service fwup /sbin/ffu -a
+    class firmware_update
+    user root
+    group root
+    critical
+    oneshot
 
 # SecEDS
 
@@ -779,7 +822,7 @@ on property:ro.securestorage.knox=true
     start secure_storage
 
 # umount service
-service umount_service /system/bin/umount /preload
+service umount_service /system/bin/umount -D /preload
     disabled
     oneshot
 
@@ -831,3 +874,10 @@ service ipsec-daemon /system/bin/IPSecService
     socket ipsec_socket stream 660 system system
     user system
     group system net_raw inet net_admin
+
+#SLocation
+    service cellgeofenced /system/bin/cellgeofenced
+    class main
+    socket cellgeofence seqpacket 0660 gps system
+    user gps
+    group system inet

@@ -7,6 +7,9 @@ on post-fs-data
     # give system access to wpa_supplicant.conf for backup and restore
     mkdir /data/misc/wifi 0770 wifi system
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    chown system wifi /data/misc/wifi/wpa_supplicant.conf
+    chmod 0660 /data/misc/wifi/wpa_supplicant.bak.conf
+    chown system wifi /data/misc/wifi/wpa_supplicant.bak.conf
     mkdir /data/misc/wifi/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0775 dhcp dhcp
     chown dhcp dhcp /data/misc/dhcp
