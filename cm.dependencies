@@ -28,7 +28,7 @@
         "target_path": "hardware/samsung_slsi-cm/openmax"
     },
     {
-        "repository": "android_kernel_samsung_noble",
-        "target_path": "kernel/samsung/noble"
+        "repository": "android_kernel_samsung_noblelte",
+        "target_path": "kernel/samsung/noblelte"
     }
 ]
