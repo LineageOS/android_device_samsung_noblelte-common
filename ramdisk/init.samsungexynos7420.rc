@@ -112,7 +112,12 @@ on post-fs-data
 
 #Private Mode
     mkdir /mnt/shell/privatemode 0700 system system
-    mkdir /storage/Private 0000 system system	
+    mkdir /storage/Private 0000 system system
+
+# Vibrations
+    chown system system /sys/devices/virtual/timed_output/vibrator/enable
+    chown system system /sys/devices/virtual/timed_output/vibrator/intensity
+    write /sys/devices/virtual/timed_output/vibrator/intensity 10000
 
 # permission for CHARGING
    chown system radio /sys/class/power_supply/battery/batt_discharging_check
