@@ -60,7 +60,8 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196609 \
     ro.sf.lcd_density=560 \
-    ro.bq.gpu_to_cpu_unsupported=1
+    ro.bq.gpu_to_cpu_unsupported=1 \
+    debug.hwc.max_hw_overlays=0
 
 PRODUCT_PACKAGES += \
     gralloc.exynos5
@@ -148,7 +149,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
-    audio_hal.force_wideband=true
+    audio_hal.force_voice_config=narrow
 
 ###########################################################
 ### OMX/MEDIA
