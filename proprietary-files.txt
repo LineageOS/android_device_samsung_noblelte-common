@@ -33,6 +33,7 @@ etc/wifi/nvram_net.txt_wisol_b1
 etc/sec_s3fwrn5s_rfreg_for_old_hw.bin
 etc/sec_s3fwrn5s_rfreg.bin
 lib/hw/nfc_nci.universal7420.so
+lib64/hw/nfc_nci.universal7420.so
 vendor/firmware/sec_s3fwrn5s_firmware.bin
 
 ### Media
