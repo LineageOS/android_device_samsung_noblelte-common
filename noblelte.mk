@@ -90,7 +90,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.hsxpa=1 \
     ro.ril.gprsclass=10 \
     ro.telephony.ril_class=SlteRIL \
-    ro.ril.telephony.mqanelements=5
+    ro.ril.telephony.mqanelements=6
 
 ###########################################################
 ### WIFI
