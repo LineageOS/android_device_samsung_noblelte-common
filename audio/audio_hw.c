@@ -2156,9 +2156,6 @@ static int adev_open(const hw_module_t* module, const char* name,
         else if ((strncmp(voice_config, "wide", 4)) == 0)
             adev->wb_amr = true;
         ALOGV("%s: Forcing voice config: %s", __func__, voice_config);
-    } else {
-        /* register callback for wideband AMR setting */
-        ril_register_set_wb_amr_callback(adev_set_wb_amr_callback, (void *)adev);
     }
 
     /* Two mic control */
