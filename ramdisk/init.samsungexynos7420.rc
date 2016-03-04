@@ -117,7 +117,8 @@ on post-fs-data
 # Vibrations
     chown system system /sys/devices/virtual/timed_output/vibrator/enable
     chown system system /sys/devices/virtual/timed_output/vibrator/intensity
-    write /sys/devices/virtual/timed_output/vibrator/intensity 10000
+    # Default to 75% vibrator strength
+    write /sys/devices/virtual/timed_output/vibrator/intensity 7500
 
 # permission for CHARGING
    chown system radio /sys/class/power_supply/battery/batt_discharging_check
