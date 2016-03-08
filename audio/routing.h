@@ -46,9 +46,7 @@ enum {
 
 struct route_config {
     const char * const output_route;
-    const char * const output_device;
     const char * const input_route;
-    const char * const input_device;
 };
 
 const struct route_config voice_speaker = {
