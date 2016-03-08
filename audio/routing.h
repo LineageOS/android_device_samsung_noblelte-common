@@ -222,7 +222,7 @@ const struct route_config * const route_configs[IN_SOURCE_TAB_SIZE]
     {   /* IN_SOURCE_CAMCORDER */
         &camcorder_speaker,         /* OUT_DEVICE_SPEAKER */
         &none,                      /* OUT_DEVICE_EARPIECE */
-        &camcorder_headphones,      /* OUT_DEVICE_HEADSET */
+        &camcorder_headset,         /* OUT_DEVICE_HEADSET */
         &camcorder_headphones,      /* OUT_DEVICE_HEADPHONES */
         &media_bt_sco,              /* OUT_DEVICE_BT_SCO */
         &media_bt_sco_headset_out,  /* OUT_DEVICE_BT_SCO_HEADSET_OUT */
