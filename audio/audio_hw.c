@@ -360,11 +360,19 @@ static int adev_set_voice_volume(struct audio_hw_device *dev, float volume);
 
 static int open_hdmi_driver(struct audio_device *adev)
 {
+    char *hdmi_node;
+
+#ifndef USES_NEW_HDMI
+    hdmi_node = "/dev/video16";
+#else
+    hdmi_node = "/dev/graphics/fb1";
+#endif
+
     if (adev->hdmi_drv_fd < 0) {
-        adev->hdmi_drv_fd = open("/dev/video16", O_RDWR);
+        adev->hdmi_drv_fd = open(hdmi_node, O_RDWR);
         if (adev->hdmi_drv_fd < 0)
-            ALOGE("%s cannot open video16 - error: %s\n",
-                  __func__, strerror(errno));
+            ALOGE("%s cannot open %s - error: %s\n",
+                  __func__, hdmi_node, strerror(errno));
     }
     return adev->hdmi_drv_fd;
 }
