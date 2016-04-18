@@ -83,14 +83,21 @@ USE_OPENGL_RENDERER := true
 BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
 BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
 
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
+
 # frameworks/native/services/surfaceflinger
 # Android keeps 2 surface buffers at all time in case the hwcomposer
 # misses the time to swap buffers (in cases where it takes 16ms or
 # less). Use 3 to avoid timing issues.
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-
-# Exynos display
-BOARD_USES_VIRTUAL_DISPLAY := true
 
 # HDMI
 BOARD_HDMI_INCAPABLE := true
@@ -120,7 +127,7 @@ BOARD_USE_ANB_OUTBUF_SHARE := true
 BOARD_USE_IMPROVED_BUFFER := true
 BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 BOARD_USE_GSC_RGB_ENCODER := true
-BOARD_USE_CSC_HW := true
+BOARD_USE_CSC_HW := false
 BOARD_USE_QOS_CTRL := false
 BOARD_USE_VP8ENC_SUPPORT := true
 
