@@ -5144,6 +5144,9 @@ typedef struct {
 #define RIL_UNSOL_UICC_APPLICATION_STATUS 11063
 #define RIL_UNSOL_VOICE_RADIO_BEARER_HO_STATUS 11064
 
+/* SNDMGR */
+#define RIL_UNSOL_SNDMGR_WB_AMR_REPORT 20017
+
 /***********************************************************************/
 
 #if defined(ANDROID_MULTI_SIM)
