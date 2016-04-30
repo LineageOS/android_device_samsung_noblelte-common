@@ -58,6 +58,8 @@
         <item>"1,1"</item>
         <!-- MOBILE -->
         <item>"0,1"</item>
+        <!-- BLUETOOTH -->
+        <item>"7,1"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
