@@ -97,7 +97,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 # Android keeps 2 surface buffers at all time in case the hwcomposer
 # misses the time to swap buffers (in cases where it takes 16ms or
 # less). Use 3 to avoid timing issues.
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 5
 
 # HDMI
 BOARD_HDMI_INCAPABLE := true
