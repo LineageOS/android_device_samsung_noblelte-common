@@ -79,10 +79,6 @@ BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
 # Graphics
 USE_OPENGL_RENDERER := true
 
-# Renderscript
-BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
-BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
-
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
 # Increase the size if shaders of size greater than 12KB are used.
