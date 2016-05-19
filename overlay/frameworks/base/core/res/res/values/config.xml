@@ -17,8 +17,6 @@
 */
 -->
 
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
 <resources>
     <!-- This string array should be overridden by the device to present a list of network
          attributes.  This is used by the connectivity manager to decide which networks can coexist
@@ -30,22 +28,19 @@
          does not require auto-restore. -->
     <!-- the 6th element indicates boot-time dependency-met value. -->
     <string-array translatable="false" name="networkAttributes">
-        <item>wifi,1,1,1,-1,true</item>
-        <item>mobile,0,0,0,-1,true</item>
-        <item>mobile_mms,2,0,2,180000,true</item>
-        <item>mobile_supl,3,0,2,60000,true</item>
-        <item>mobile_dun,4,0,2,60000,true</item>
-        <item>mobile_hipri,5,0,3,60000,true</item>
-        <item>bluetooth,7,7,0,-1,true</item>
-        <item>mobile_fota,10,0,2,60000,true</item>
-        <item>mobile_ims,11,0,2,-1,true</item>
-        <item>mobile_cbs,12,0,2,60000,true</item>
-        <item>wifi_p2p,13,1,0,-1,true</item>
-        <item>mobile_ia,14,0,2,-1,true</item>
-        <item>mobile_bip,23,0,2,60000,true</item>
-        <item>mobile_xcap,27,0,2,-1,true</item>
-        <item>mobile_ent1,28,0,2,-1,true</item>
-        <item>mobile_ent2,29,0,2,-1,true</item>
+        <item>"wifi,1,1,1,-1,true"</item>
+        <item>"mobile,0,0,0,-1,true"</item>
+        <item>"mobile_mms,2,0,2,60000,true"</item>
+        <item>"mobile_supl,3,0,2,60000,true"</item>
+        <item>"mobile_dun,4,0,2,60000,true"</item>
+        <item>"mobile_hipri,5,0,3,60000,true"</item>
+        <item>"mobile_fota,10,0,2,60000,true"</item>
+        <item>"mobile_ims,11,0,2,60000,true"</item>
+        <item>"mobile_cbs,12,0,2,60000,true"</item>
+        <item>"mobile_ia,14,0,2,-1,true"</item>
+        <item>"bluetooth,7,7,2,-1,true"</item>
+        <item>"ethernet,9,9,9,-1,true"</item>
+        <item>"mobile_emergency,15,0,2,-1,true</item>
     </string-array>
 
     <!-- This string array should be overridden by the device to present a list of radio
@@ -66,9 +61,7 @@
          USB interfaces.  If the device doesn't want to support tething over USB this should
          be empty.  An example would be "usb.*" -->
     <string-array translatable="false" name="config_tether_usb_regexs">
-        <item>usb\\d</item>
         <item>rndis\\d</item>
-        <item>ncm\\d</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
@@ -91,14 +84,18 @@
     <integer-array translatable="false" name="config_tether_upstream_types">
         <item>0</item>
         <item>1</item>
-        <item>4</item>
         <item>5</item>
         <item>7</item>
-        <item>9</item>
     </integer-array>
 
     <!-- The default iface on which to monitor data use -->
     <string name="config_datause_iface" translatable="false">rmnet0</string>
+
+    <!-- The RadioAccessFamilies supported by the device.
+         Empty is viewed as "all".  Only used on devices which
+         don't support RIL_REQUEST_GET_RADIO_CAPABILITY
+         format is UMTS|LTE|... -->
+    <string translatable="false" name="config_radio_access_family">GSM | WCDMA | LTE</string>
 
     <!-- ############################################################## -->
     <!-- ### HARDWARE KEYS                                              -->
@@ -157,8 +154,11 @@
     <integer name="config_doubleTapOnHomeBehavior">2</integer>
 
     <!-- ############################################################## -->
-    <!-- ### TOUCHSCREEN                                                -->
+    <!-- ### DISPLAY                                                    -->
     <!-- ############################################################## -->
+
+    <!-- If this is true, the screen will fade off. -->
+    <bool name="config_animateScreenLights">false</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -178,19 +178,14 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>2</item>
-        <item>7</item>
-        <item>15</item>
-        <item>50</item>
+        <item>9</item>
+        <item>30</item>
         <item>100</item>
-        <item>200</item>
-        <item>400</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>3000</item>
-        <item>5000</item>
+        <item>325</item>
+        <item>1250</item>
+        <item>3500</item>
         <item>10000</item>
-        <item>30000</item>
+        <item>20000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -198,25 +193,20 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>13</item>   <!-- 0-2 -->
-        <item>25</item>   <!-- 3-7 -->
-        <item>32</item>   <!-- 5-15 -->
-        <item>41</item>   <!-- 15-50 -->
-        <item>52</item>   <!-- 50-100 -->
-        <item>62</item>   <!-- 100-200 -->
-        <item>69</item>   <!-- 200-400 -->
-        <item>78</item>   <!-- 400-1000 -->
-        <item>88</item>   <!-- 1000-2000 -->
-        <item>134</item>  <!-- 2000-3000 -->
-        <item>178</item>  <!-- 3000-5000 -->
-        <item>225</item>  <!-- 5000-10000 -->
-        <item>255</item>  <!-- 10000-30000 -->
-        <item>255</item>  <!-- 30000+ -->
+        <!--     9 --> <item>18</item>
+        <!--    30 --> <item>30</item>
+        <!--   100 --> <item>59</item>
+        <!--   325 --> <item>74</item>
+        <!--  1250 --> <item>92</item>
+        <!--  3500 --> <item>118</item>
+        <!-- 10000 --> <item>155</item>
+        <!-- 20000 --> <item>222</item>
+                       <item>255</item>
     </integer-array>
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+    <integer name="config_screenBrightnessSettingMinimum">10</integer>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
