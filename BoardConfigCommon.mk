@@ -32,8 +32,6 @@ TARGET_BOOTLOADER_BOARD_NAME := universal7420
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_PAGESIZE := 2048
 #BOARD_KERNEL_CMDLINE := The bootloader ignores the cmdline from the boot.img
-BOARD_KERNEL_PREBUILT_DT := true
-BOARD_KERNEL_SEPARATED_DT := true
 
 # /proc/partitions * 2 (why?) * BLOCK_SIZE (512) = size in bytes
 BOARD_BOOTIMAGE_PARTITION_SIZE := 29360128
