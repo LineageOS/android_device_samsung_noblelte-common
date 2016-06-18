@@ -223,4 +223,4 @@ $(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos7420/exynos7420.mk)
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/samsung/noblelte-common/noblelte-common-vendor.mk)
+$(call inherit-product, vendor/samsung/noblelte-common/noblelte-common-vendor.mk)
