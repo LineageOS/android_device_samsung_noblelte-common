@@ -196,7 +196,6 @@ on boot
     chmod 0664 /sys/class/devfreq/bus_int.6/max_freq
 
     # NFC_NXP
-    setprop ro.nfc.port "I2C"
     chmod 0660 /dev/pn547
     chown nfc nfc /dev/pn547
 

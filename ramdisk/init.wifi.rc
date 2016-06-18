@@ -57,8 +57,6 @@ on post-fs-data
     chmod 0660 /efs/wifi/.mac.info
 
 on boot
-	setprop wifi.interface wlan0
-
     # Pcie WiFi T-put setting
 	write /sys/class/net/wlan0/queues/rx-0/rps_cpus 00
 
