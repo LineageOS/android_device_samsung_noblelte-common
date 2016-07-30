@@ -2,10 +2,7 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay
 
 LOCAL_PATH := device/samsung/noblelte-common
 
-###########################################################
-### RAMDISK
-###########################################################
-
+# Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
     init.carrier.rc \
@@ -17,10 +14,7 @@ PRODUCT_PACKAGES += \
     init.wifi.rc \
     ueventd.samsungexynos7420.rc
 
-###########################################################
-### PERMISSONS
-###########################################################
-
+# Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -49,10 +43,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
-###########################################################
-### DISPLAY
-###########################################################
-
+# Graphics
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
 PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
@@ -71,10 +62,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AdvancedDisplay
 
-###########################################################
-### RADIO
-###########################################################
-
+# Radio
 PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full
@@ -83,10 +71,10 @@ PRODUCT_PACKAGES += \
     libsecril-client \
     libsecril-client-sap
 
-###########################################################
-### WIFI
-###########################################################
+PRODUCT_PACKAGES += \
+    SamsungServiceMode
 
+# WiFi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
@@ -106,10 +94,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     wpa_supplicant.conf
 
-###########################################################
-### NFC
-###########################################################
-
+# NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-sec-hal.conf:system/etc/libnfc-sec-hal.conf \
     $(LOCAL_PATH)/configs/nfc/libnfc-sec.conf:system/etc/libnfc-brcm.conf \
@@ -120,10 +105,7 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag
 
-###########################################################
-### AUDIO
-###########################################################
-
+# Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml
@@ -134,10 +116,7 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.primary.universal7420
 
-###########################################################
-### OMX/MEDIA
-###########################################################
-
+# Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
@@ -146,74 +125,40 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml
 
-###########################################################
-### POWER
-###########################################################
-
+# Power
 PRODUCT_PACKAGES += \
     power.universal7420
 
-###########################################################
-### LIGHTS
-###########################################################
-
+# Lights
 PRODUCT_PACKAGES += \
     lights.universal7420
 
-###########################################################
-### GPS
-###########################################################
-
+# GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
 
-PRODUCT_PACKAGES += \
-    libdmitry
-
-###########################################################
-### CAMERA
-###########################################################
-
+# Camera
 PRODUCT_PACKAGES += \
     Snap
 
-###########################################################
-### TOUCHSCREEN
-###########################################################
-
+# Keys
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/gpio_keys_8.kl:/system/usr/keylayout/gpio_keys_8.kl \
     $(LOCAL_PATH)/configs/keylayout/sec_touchkey.kl:/system/usr/keylayout/sec_touchkey.kl
 
-###########################################################
-### STYLUS
-###########################################################
-
+# Touchscreen
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/ft5x06_ts.idc:/system/usr/idc/ft5x06_ts.idc \
     $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:/system/usr/idc/sec_e-pen.idc
 
-###########################################################
-### CHARGER
-###########################################################
-
+# Offmode charger
 PRODUCT_PACKAGES += \
     charger_res_images
 
-###########################################################
-### PACKAGES
-###########################################################
-
-PRODUCT_PACKAGES += \
-    SamsungServiceMode
-
-###########################################################
-### DEFAULT PROPS
-###########################################################
-
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.debug_level=0x4948
+# Samsung debug level
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+#    ro.debug_level=0x4948
 
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
