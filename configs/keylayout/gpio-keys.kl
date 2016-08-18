@@ -8,7 +8,7 @@
 # add it here to a file you name after the 'name' of the
 # device.
 #
-key 115   VOLUME_UP         WAKE_DROPPED
-key 114   VOLUME_DOWN       WAKE_DROPPED
-key 116   POWER             WAKE_DROPPED
-key 172   HOME              WAKE_DROPPED
+key 115   VOLUME_UP
+key 114   VOLUME_DOWN
+key 116   POWER
+key 172   HOME
