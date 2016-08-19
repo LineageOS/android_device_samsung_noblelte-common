@@ -153,8 +153,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:/system/usr/idc/sec_e-pen.idc
 
 # Offmode charger
+# Use cm images if available, aosp ones otherwise
 PRODUCT_PACKAGES += \
-    charger_res_images
+    charger_res_images \
+    cm_charger_res_images
 
 # Samsung debug level
 #ADDITIONAL_DEFAULT_PROPERTIES += \
