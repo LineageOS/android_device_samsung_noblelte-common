@@ -151,5 +151,7 @@ BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/fstab.samsungexynos7420
 
 # SELinux
-BOARD_SEPOLICY_DIRS := \
-	device/samsung/noblelte-common/sepolicy
+BOARD_SEPOLICY_DIRS += device/samsung/noblelte-common/sepolicy
+
+# Seccomp filters
+BOARD_SECCOMP_POLICY += device/samsung/noblelte-common/seccomp
