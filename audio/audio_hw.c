@@ -57,7 +57,7 @@
 #define PCM_DEVICE 0       /* Playback link */
 #define PCM_DEVICE_VOICE 1 /* Baseband link */
 #define PCM_DEVICE_SCO 2   /* Bluetooth link */
-#define PCM_DEVICE_DEEP 8  /* Deep buffer */
+#define PCM_DEVICE_DEEP 3  /* Deep buffer */
 
 #define MIXER_CARD 0
 
