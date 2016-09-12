@@ -433,15 +433,3 @@ service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF0000000000000
     user system
     group system
     oneshot
-
-# for Bluetooth Tethering
-service dhcpcd_bt-pan /system/bin/dhcpcd -ABKL
-    class main
-    disabled
-    oneshot
-
-service iprenew_bt-pan /system/bin/dhcpcd -n
-    class late_start
-    disabled
-    oneshot
-# end of BT
