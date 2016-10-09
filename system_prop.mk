@@ -6,10 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path="/efs/bluetooth/bt_addr"
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
 # Dalvik/Art
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=4 \
