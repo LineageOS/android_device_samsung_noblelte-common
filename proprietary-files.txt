@@ -197,6 +197,14 @@ lib64/hw/gps.default.so:lib64/hw/gps.universal7420.so
 lib/libwrappergps.so
 lib64/libwrappergps.so
 
+# Gralloc
+lib/hw/gralloc.exynos5.so
+lib64/hw/gralloc.exynos5.so
+lib/libion_exynos.so
+lib64/libion_exynos.so
+lib/libion.so
+lib64/libion.so
+
 ### HWC
 vendor/lib/egl/libGLES_mali.so
 vendor/lib64/egl/libGLES_mali.so
