@@ -114,8 +114,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
-    audio.r_submix.default \
-    audio.primary.universal7420
+    audio.r_submix.default
 
 # Media
 PRODUCT_COPY_FILES += \
