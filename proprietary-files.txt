@@ -135,10 +135,10 @@ vendor/lib/liblvverx_3.27.02.so
 vendor/lib/liblvvetx_3.27.02.so
 
 ### Camera
-#lib/hw/camera.exynos5.so
-#lib/hw/camera.universal7420.so
-#lib64/hw/camera.exynos5.so
-#lib64/hw/camera.universal7420.so
+lib/hw/camera.exynos5.so
+lib/hw/camera.universal7420.so
+lib64/hw/camera.exynos5.so
+lib64/hw/camera.universal7420.so
 lib/libexynoscamera3.so
 lib64/libexynoscamera3.so
 lib/libexynoscamera.so
