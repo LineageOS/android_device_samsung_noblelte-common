@@ -366,6 +366,7 @@ static int get_input_source_id(audio_source_t source, bool wb_amr)
 static void do_out_standby(struct stream_out *out);
 static void adev_set_call_audio_path(struct audio_device *adev);
 static int adev_set_voice_volume(struct audio_hw_device *dev, float volume);
+static void start_ril_call(struct audio_device *adev);
 
 /**
  * NOTE: when multiple mutexes have to be acquired, always respect the
@@ -715,7 +716,13 @@ static void select_devices(struct audio_device *adev)
         input_devices_off();
     }
 
-    /* TODO: Tell the modem what we plan to do */
+    /*
+     * Already tell the modem that we are in a call. This should make it
+     * faster to accept an incoming call.
+     */
+    if (adev->in_call) {
+        start_ril_call(adev);
+    }
 
     /*
      * Apply the new audio routes
@@ -960,26 +967,8 @@ static void stop_voice_call(struct audio_device *adev)
     ALOGV("%s: Successfully closed %d active PCMs", __func__, status);
 }
 
-static void start_call(struct audio_device *adev)
+static void start_ril_call(struct audio_device *adev)
 {
-    if (adev->in_call) {
-        return;
-    }
-
-    adev->in_call = true;
-
-    if (adev->out_device == AUDIO_DEVICE_NONE &&
-        adev->in_device == AUDIO_DEVICE_NONE) {
-        ALOGV("%s: No device selected, use earpiece as the default",
-              __func__);
-        adev->out_device = AUDIO_DEVICE_OUT_EARPIECE;
-    }
-    adev->input_source = AUDIO_SOURCE_VOICE_CALL;
-
-    select_devices(adev);
-    start_voice_call(adev);
-
-    /* FIXME: Turn on two mic control for earpiece and speaker */
     switch (adev->out_device) {
         case AUDIO_DEVICE_OUT_EARPIECE:
         case AUDIO_DEVICE_OUT_SPEAKER:
@@ -1008,6 +997,26 @@ static void start_call(struct audio_device *adev)
     ril_set_call_clock_sync(&adev->ril, SOUND_CLOCK_START);
 }
 
+static void start_call(struct audio_device *adev)
+{
+    if (adev->in_call) {
+        return;
+    }
+
+    adev->in_call = true;
+
+    if (adev->out_device == AUDIO_DEVICE_NONE &&
+        adev->in_device == AUDIO_DEVICE_NONE) {
+        ALOGV("%s: No device selected, use earpiece as the default",
+              __func__);
+        adev->out_device = AUDIO_DEVICE_OUT_EARPIECE;
+    }
+    adev->input_source = AUDIO_SOURCE_VOICE_CALL;
+
+    select_devices(adev);
+    start_voice_call(adev);
+}
+
 static void stop_call(struct audio_device *adev)
 {
     if (!adev->in_call) {
@@ -1031,6 +1040,7 @@ static void stop_call(struct audio_device *adev)
               adev->out_device,
               adev->input_source);
 
+        adev->in_call = false;
         select_devices(adev);
     }
 
