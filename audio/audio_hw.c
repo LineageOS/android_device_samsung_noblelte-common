@@ -66,6 +66,8 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
+#define DAPM_PATH "/d/asoc/Pacific WM5110 Sound/dapm"
+
 /*
  * Set the deep-buffer and low-latency output buffer sizes to
  * integral multiple of msec. This reduces the variations in the writes.
@@ -447,6 +449,72 @@ static int set_hdmi_channels(struct audio_device *adev, int channels) {
         ALOGE("V4L2_CID_TV_SET_NUM_CHANNELS ioctl error (%d)", errno);
 
     return ret;
+}
+
+static const char *audio_device_to_dapm(int out_device_id)
+{
+    switch (out_device_id) {
+    case OUT_DEVICE_SPEAKER_AND_EARPIECE:
+    case OUT_DEVICE_SPEAKER_AND_HEADSET:
+    case OUT_DEVICE_EARPIECE:
+        return "RCV";
+    case OUT_DEVICE_SPEAKER:
+        return "SPK";
+    case OUT_DEVICE_HEADSET:
+    case OUT_DEVICE_HEADPHONES:
+        return "HP";
+    }
+
+    return NULL;
+}
+
+static void output_device_off(int out_device_id)
+{
+    char *state = "Off";
+    const char *device;
+    char dapm[64] = {0};
+    bool ok = false;
+    int i;
+
+    device = audio_device_to_dapm(out_device_id);
+    if (device == NULL) {
+        goto out;
+    }
+    snprintf(dapm, sizeof(dapm), "%s/%s", DAPM_PATH, device);
+
+    ALOGV("%s: Check if %s is turned off\n", __func__, device);
+
+    for (i = 0; i < 20; i++) {
+        const char *p;
+        char line[32] = {0};
+        FILE *fp;
+
+        fp = fopen(dapm, "r");
+        if (fp == NULL) {
+            ALOGE("%s: Failed to open %s\n", __func__, dapm);
+            break;
+        }
+
+        p = fgets(line, sizeof(line), fp);
+        fclose(fp);
+        if (p == NULL) {
+            break;
+        }
+
+        p = strstr(line, state);
+        if (p != NULL) {
+            ok = true;
+            break;
+        }
+        usleep(5);
+    }
+out:
+    if (ok) {
+        ALOGV("%s: Output device %s turned off!\n", __func__, device);
+    } else {
+        ALOGE("%s: Failed to wait for %s to turn off", __func__, device);
+        usleep(50);
+    }
 }
 
 static bool route_changed(struct audio_device *adev)
