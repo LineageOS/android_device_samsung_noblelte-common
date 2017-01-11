@@ -517,6 +517,59 @@ out:
     }
 }
 
+const char *audio_inputs[] = {
+    "Headset Mic",
+    "Main Mic",
+    "Sub Mic",
+    "Third Mic"
+};
+
+static void input_devices_off(void)
+{
+    char *state = "Off";
+    bool ok = false;
+    size_t i;
+
+    for (i = 0; i < ARRAY_SIZE(audio_inputs); i++) {
+        char dapm[64] = {0};
+        int j;
+
+        snprintf(dapm, sizeof(dapm), "%s/%s", DAPM_PATH, audio_inputs[i]);
+
+        for (j = 0; j < 20; j++) {
+            const char *p;
+            char line[32] = {0};
+            FILE *fp;
+
+            fp = fopen(dapm, "r");
+            if (fp == NULL) {
+                ALOGE("%s: Failed to open %s\n", __func__, dapm);
+                break;
+            }
+
+            p = fgets(line, sizeof(line), fp);
+            fclose(fp);
+            if (p == NULL) {
+                break;
+            }
+
+            p = strstr(line, state);
+            if (p != NULL) {
+                ok = true;
+                break;
+            }
+            usleep(5);
+        }
+    }
+out:
+    if (ok) {
+        ALOGV("%s: Input devices turned off!\n", __func__);
+    } else {
+        ALOGE("%s: Failed to wait for device to turn off", __func__);
+        usleep(50);
+    }
+}
+
 static bool route_changed(struct audio_device *adev)
 {
     int output_device_id = get_output_device_id(adev->out_device);
