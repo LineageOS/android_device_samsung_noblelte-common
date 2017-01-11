@@ -12,6 +12,8 @@ type radio_factoryapp_efs_file, file_type;
 type sensor_efs_file, file_type;
 type wifi_efs_file, file_type;
 
+type debugfs_asoc, fs_type;
+
 ### sysfs types
 type sysfs_mdnie_writable, fs_type, sysfs_type, mlstrustedobject;
 type sysfs_mipi_writable, fs_type, sysfs_type, mlstrustedobject;
