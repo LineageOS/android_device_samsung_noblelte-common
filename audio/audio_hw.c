@@ -570,6 +570,38 @@ out:
     }
 }
 
+static void enable_audio_route(struct audio_device *adev,
+                               const char *mixer_path)
+{
+    ALOGV("%s: %s\n", __func__, mixer_path);
+
+    audio_route_apply_and_update_path(adev->audio_route, mixer_path);
+}
+
+static void disable_audio_route(struct audio_device *adev,
+                                const char *mixer_path)
+{
+    ALOGV("%s: %s\n", __func__, mixer_path);
+
+    audio_route_reset_and_update_path(adev->audio_route, mixer_path);
+}
+
+static void enable_audio_device(struct audio_device *adev,
+                                 const char *device)
+{
+    ALOGV("%s: %s\n", __func__, device);
+
+    audio_route_apply_and_update_path(adev->audio_route, device);
+}
+
+static void disable_audio_device(struct audio_device *adev,
+                                 const char *device)
+{
+    ALOGV("%s: %s\n", __func__, device);
+
+    audio_route_reset_and_update_path(adev->audio_route, device);
+}
+
 static bool route_changed(struct audio_device *adev)
 {
     int output_device_id = get_output_device_id(adev->out_device);
