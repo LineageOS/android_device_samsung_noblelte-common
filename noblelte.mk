@@ -2,6 +2,10 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/noblelte-common/overlay
 
 LOCAL_PATH := device/samsung/noblelte-common
 
+# Flat device tree for boot image
+PRODUCT_PACKAGES += \
+    dtbhtoolExynos
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.samsungexynos7420 \
