@@ -113,7 +113,7 @@ BOARD_USE_S3D_SUPPORT := true
 BOARD_USE_VP8ENC_SUPPORT := true
 
 # Include path
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/include
 
 # Hardware
 BOARD_HARDWARE_CLASS += device/samsung/noblelte-common/cmhw
