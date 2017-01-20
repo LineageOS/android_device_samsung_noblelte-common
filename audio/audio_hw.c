@@ -707,20 +707,22 @@ static void select_devices(struct audio_device *adev)
     /*
      * Disable the output and input device
      */
-    if (adev->active_output.route != NULL) {
-        disable_audio_route(adev, adev->active_output.route);
-    }
     if (adev->active_output.device != NULL) {
         disable_audio_device(adev, adev->active_output.device);
         output_device_off(adev->active_output.dev_id);
     }
-
-    if (adev->active_input.route != NULL) {
-        disable_audio_route(adev, adev->active_input.route);
+    if (adev->active_output.route != NULL) {
+        disable_audio_route(adev, adev->active_output.route);
+        usleep(5);
     }
+
     if (adev->active_input.device != NULL) {
         disable_audio_device(adev, adev->active_input.device);
         input_devices_off();
+    }
+    if (adev->active_input.route != NULL) {
+        disable_audio_route(adev, adev->active_input.route);
+        usleep(5);
     }
 
     /*
