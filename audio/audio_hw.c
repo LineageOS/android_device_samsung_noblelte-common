@@ -67,6 +67,7 @@
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
 #define DEVICE_DAPM_PATH "/d/asoc/Pacific WM5110 Sound/dapm"
+#define CODEC_DAPM_PATH "/d/asoc/Pacific WM5110 Sound/florida-codec/dapm"
 
 /*
  * Set the deep-buffer and low-latency output buffer sizes to
@@ -588,6 +589,62 @@ out:
     }
 }
 
+const char *audio_codecs[] = {
+    "DSP1",
+    "DSP2",
+    "DSP3",
+    "DSP4"
+};
+
+static void codecs_off(void)
+{
+    char *state = "Off";
+    bool ok = false;
+    size_t i;
+
+    for (i = 0; i < ARRAY_SIZE(audio_codecs); i++) {
+        char dapm[64] = {0};
+        int j;
+
+        snprintf(dapm, sizeof(dapm), "%s/%s", CODEC_DAPM_PATH, audio_codecs[i]);
+
+        for (j = 0; j < 20; j++) {
+            const char *p;
+            char line[32] = {0};
+            FILE *fp;
+
+            fp = fopen(dapm, "r");
+            if (fp == NULL) {
+                ALOGE("%s: Failed to open %s - %s\n",
+                      __func__,
+                      dapm,
+                      strerror(errno));
+                break;
+            }
+
+            p = fgets(line, sizeof(line), fp);
+            fclose(fp);
+            if (p == NULL) {
+                break;
+            }
+
+            p = strstr(line, state);
+            if (p != NULL) {
+                ok = true;
+                break;
+            }
+            usleep(5);
+        }
+    }
+out:
+    if (ok) {
+        ALOGV("%s: DSPs turned off!\n", __func__);
+    } else {
+        ALOGE("%s: Failed to wait for codec to turn off", __func__);
+        usleep(50);
+    }
+}
+
 static void enable_audio_route(struct audio_device *adev,
                                const char *mixer_path)
 {
@@ -707,22 +764,22 @@ static void select_devices(struct audio_device *adev)
     /*
      * Disable the output and input device
      */
+    if (adev->active_output.route != NULL) {
+        disable_audio_route(adev, adev->active_output.route);
+    }
+    if (adev->active_input.route != NULL) {
+        disable_audio_route(adev, adev->active_input.route);
+    }
+    codecs_off();
+
     if (adev->active_output.device != NULL) {
         disable_audio_device(adev, adev->active_output.device);
         output_device_off(adev->active_output.dev_id);
-    }
-    if (adev->active_output.route != NULL) {
-        disable_audio_route(adev, adev->active_output.route);
-        usleep(5);
     }
 
     if (adev->active_input.device != NULL) {
         disable_audio_device(adev, adev->active_input.device);
         input_devices_off();
-    }
-    if (adev->active_input.route != NULL) {
-        disable_audio_route(adev, adev->active_input.route);
-        usleep(5);
     }
 
     /*
