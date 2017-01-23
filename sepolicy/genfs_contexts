@@ -1,1 +1,2 @@
 genfscon debugfs "/asoc/Pacific WM1814 Sound/dapm/" u:object_r:debugfs_asoc:s0
+genfscon debugfs "/asoc/Pacific WM1814 Sound/vegas-codec/dapm/" u:object_r:debugfs_asoc:s0
