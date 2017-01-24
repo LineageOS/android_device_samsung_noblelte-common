@@ -84,6 +84,10 @@ USE_OPENGL_RENDERER := true
 # Avoid buffer swap timing issues
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
+# Renderscript
+BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
+BOARD_OVERRIDE_RS_CPU_VARIANT_64 := cortex-a57
+
 # Virtual Display
 BOARD_USES_VIRTUAL_DISPLAY := true
 
