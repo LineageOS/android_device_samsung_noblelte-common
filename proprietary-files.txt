@@ -235,7 +235,20 @@ lib64/libsecnativefeature.so
 lib/libsec-ril.so
 lib64/libsec-ril.so
 
+### Fingerprint
+bin/fingerprintd
+lib64/hw/fingerprint.default.so
+lib64/libbauthserver.so
+lib64/libbauthtzcommon.so
+lib64/libsynaFpSensorTestNwd.so
+lib64/libegis_fp_normal_sensor_test.so
+
 ### Mobicore
+bin/mcDriverDaemon
+lib/libMcRegistry.so
+lib64/libMcRegistry.so
+lib/libMcClient.so
+lib64/libMcClient.so
 app/FFFFFFFF000000000000000000000001.drbin
 app/mcRegistry/07010000000000000000000000000000.tlbin
 app/mcRegistry/08130000000000000000000000000000.tlbin
