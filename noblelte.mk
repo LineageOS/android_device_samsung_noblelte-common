@@ -137,6 +137,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
+    fingerprintd \
     libbauthtzcommon_shim
 
 # GPS
