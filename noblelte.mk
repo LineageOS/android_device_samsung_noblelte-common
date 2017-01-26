@@ -135,6 +135,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.universal7420
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    libbauthtzcommon_shim
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
