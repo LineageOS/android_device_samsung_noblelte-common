@@ -594,7 +594,10 @@ const char *audio_codecs[] = {
     "DSP1",
     "DSP2",
     "DSP3",
-    "DSP4"
+    "DSP4",
+    "DSP5",
+    "DSP6",
+    "DSP7"
 };
 
 static void codecs_off(void)
