@@ -1376,7 +1376,7 @@ static ssize_t read_frames(struct stream_in *in, void *buffer, ssize_t frames)
     while (frames_wr < frames) {
         size_t frames_rd = frames - frames_wr;
 
-        ALOGT("%s: frames_rd: %zd, frames_wr: %zd, in->config.channels: %d\n",
+        ALOGV("%s: frames_rd: %zd, frames_wr: %zd, in->config.channels: %d\n",
               __func__,
               frames_rd,
               frames_wr,
