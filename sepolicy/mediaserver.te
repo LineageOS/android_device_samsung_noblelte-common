@@ -12,3 +12,6 @@ allow mediaserver efs_file:file r_file_perms;
 # Snap permissions
 allow mediaserver sensorservice_service:service_manager { find };
 allow mediaserver system_server:unix_stream_socket { read write };
+
+# /d/asoc/Noble WM1840 Sound/dapm/
+allow mediaserver debugfs_asoc:file r_file_perms;
