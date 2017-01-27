@@ -1,2 +1,2 @@
-# /d/asoc/Pacific WM5110 Sound/dapm/
+# /d/asoc/Noble WM1840 Sound/dapm/
 allow audioserver debugfs_asoc:file r_file_perms;

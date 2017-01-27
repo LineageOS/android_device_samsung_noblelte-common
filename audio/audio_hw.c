@@ -66,8 +66,8 @@
 
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
 
-#define DEVICE_DAPM_PATH "/d/asoc/Pacific WM5110 Sound/dapm"
-#define CODEC_DAPM_PATH "/d/asoc/Pacific WM5110 Sound/florida-codec/dapm"
+#define DEVICE_DAPM_PATH "/d/asoc/Noble WM1840 Sound/dapm"
+#define CODEC_DAPM_PATH "/d/asoc/Noble WM1840 Sound/florida-codec/dapm"
 
 /*
  * Set the deep-buffer and low-latency output buffer sizes to
