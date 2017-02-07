@@ -11,6 +11,9 @@
 /dev/block/platform/15570000.ufs/by-name/CACHE	/cache		ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_async_commit,data=ordered,errors=panic	wait,check
 /dev/block/platform/15570000.ufs/by-name/USERDATA	/data		ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,journal_async_commit,data=ordered,errors=panic	wait,check,encryptable=footer
 
+# Updater service
+/dev/block/platform/15570000.ufs/by-name/OTA		/misc		emmc	defaults												defaults
+
 # VOLD
 /devices/15400000.usb/15400000.dwc3/xhci-hcd.2.auto*            auto                    auto    defaults     voldmanaged=usb:auto
 
