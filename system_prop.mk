@@ -16,10 +16,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=4 \
     dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapgrowthlimit=192m \
     dalvik.vm.heapsize=512m \
     dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
+    dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m
 
 # Graphics
@@ -31,8 +31,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Hwc - not used on cm/aosp
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwc.winupdate=1 \
-    debug.hwc.otf=1
+    debug.hwc.winupdate=1
 
 # Hwui
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -47,23 +46,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_width=1024 \
     ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_large_cache_width=4096 \
-    ro.hwui.text_large_cache_height=2048 \
-    ro.hwui.fbo_cache_size=16
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-    media.stagefright.legacyencoder=1 \
-    media.stagefright.less-secure=1
+    ro.hwui.text_large_cache_height=2048
 
 # Nfc
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nfc.port="I2C"
+    ro.nfc.port="I2C" \
     ro.nfc.sec_hal=true
-
-# Network
-# Define default initial receive window size in segments.
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tcp.default_init_rwnd=60
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
