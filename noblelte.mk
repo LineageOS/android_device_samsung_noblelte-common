@@ -155,6 +155,10 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     cm_charger_res_images
 
+# CM gesture actions
+PRODUCT_PACKAGES += \
+    CMActions
+
 # Samsung debug level
 #ADDITIONAL_DEFAULT_PROPERTIES += \
 #    ro.debug_level=0x4948
