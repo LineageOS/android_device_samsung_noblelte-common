@@ -1,24 +1,14 @@
 ### Bluetooth
 vendor/firmware/bcm4359B0_V0019.0000.hcd
-vendor/firmware/bcm4359B1_V0043.0055_wisol.hcd
-vendor/firmware/bcm4359B1_V0043.0055.hcd
+vendor/firmware/bcm4359B1_V0098.0100.hcd
+vendor/firmware/bcm4359B1_V0098.0100_wisol.hcd
 
 ### Wifi
 etc/wifi/bcmdhd_apsta.bin_b1
-etc/wifi/bcmdhd_apsta.bin_b90s_b1
-etc/wifi/bcmdhd_apsta.bin_c0
 etc/wifi/bcmdhd_ibss.bin_b1
-etc/wifi/bcmdhd_ibss.bin_b90s_b1
-etc/wifi/bcmdhd_ibss.bin_c0
 etc/wifi/bcmdhd_mfg.bin_b1
-etc/wifi/bcmdhd_mfg.bin_b90s_b1
-etc/wifi/bcmdhd_mfg.bin_c0
 etc/wifi/bcmdhd_mfg2.bin_b1
-etc/wifi/bcmdhd_mfg2.bin_b90s_b1
-etc/wifi/bcmdhd_mfg2.bin_c0
 etc/wifi/bcmdhd_sta.bin_b1
-etc/wifi/bcmdhd_sta.bin_b90s_b1
-etc/wifi/bcmdhd_sta.bin_c0
 etc/wifi/cred.conf
 etc/wifi/nvram_mfg.txt_b0
 etc/wifi/nvram_mfg.txt_b1
@@ -31,10 +21,9 @@ etc/wifi/nvram_net.txt_wisol_b1
 
 ### NFC
 etc/sec_s3fwrn5s_rfreg_for_old_hw.bin
-etc/sec_s3fwrn5s_rfreg.bin
 lib/hw/nfc_nci.universal7420.so
 lib64/hw/nfc_nci.universal7420.so
-vendor/firmware/sec_s3fwrn5s_firmware.bin
+vendor/firmware/nfc/sec_s3fwrn5s_firmware.bin
 
 ### Media
 # S5P Multi Format Codec
@@ -60,6 +49,7 @@ etc/firmware/clearwater-dsp3-tx-wb.bin
 etc/firmware/clearwater-dsp4-rx-anc-nb.bin
 etc/firmware/clearwater-dsp4-rx-anc-wb.bin
 etc/firmware/clearwater-dsp6-lpsd-control.bin
+etc/firmware/clearwaterc-dsp1-trace.wmfw
 etc/firmware/clearwaterc-dsp2-tx-nb.wmfw
 etc/firmware/clearwaterc-dsp2-tx-swb.wmfw
 etc/firmware/clearwaterc-dsp2-tx-wb.wmfw
@@ -206,6 +196,8 @@ vendor/firmware/setfile_imx240.bin
 # GPS
 bin/gpsd
 lib64/hw/gps.default.so:lib64/hw/gps.universal7420.so
+lib/libfloatingfeature.so
+lib64/libfloatingfeature.so
 lib/libwrappergps.so
 lib64/libwrappergps.so
 
@@ -277,7 +269,6 @@ app/FFFFFFFF000000000000000000000001.drbin
 app/mcRegistry/07010000000000000000000000000000.tlbin
 app/mcRegistry/08130000000000000000000000000000.tlbin
 app/mcRegistry/07060000000000000000000000000000.tlbin
-app/mcRegistry/08880000000000000000000000000000.tlbin
 app/mcRegistry/00060308060501020000000000000000.tlbin
 app/mcRegistry/ffffffff00000000000000000000000a.tlbin
 app/mcRegistry/ffffffff00000000000000000000000b.tlbin
@@ -295,11 +286,10 @@ app/mcRegistry/ffffffff000000000000000000000013.tlbin
 app/mcRegistry/ffffffff000000000000000000000014.tlbin
 app/mcRegistry/ffffffff000000000000000000000016.tlbin
 app/mcRegistry/ffffffff000000000000000000000017.tlbin
-app/mcRegistry/ffffffff000000000000000000000018.tlbin
 app/mcRegistry/ffffffff000000000000000000000019.tlbin
 app/mcRegistry/ffffffff000000000000000000000021.tlbin
-app/mcRegistry/ffffffff000000000000000000000028.tlbin
 app/mcRegistry/ffffffff000000000000000000000038.tlbin
+app/mcRegistry/ffffffff000000000000000000000041.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
 app/mcRegistry/ffffffffd0000000000000000000000e.tlbin
 app/mcRegistry/ffffffffd00000000000000000000004.tlbin
