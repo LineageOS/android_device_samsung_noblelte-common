@@ -317,9 +317,9 @@ public class SlteRIL extends RIL {
     responseSignalStrength(Parcel p) {
         int gsmSignalStrength = p.readInt() & 0xff;
         int gsmBitErrorRate = p.readInt();
-        int cdmaDbm = p.readInt();
+        int cdmaDbm = p.readInt() % 256;
         int cdmaEcio = p.readInt();
-        int evdoDbm = p.readInt();
+        int evdoDbm = p.readInt() % 256;
         int evdoEcio = p.readInt();
         int evdoSnr = p.readInt();
         int lteSignalStrength = p.readInt();
