@@ -9,42 +9,32 @@
 
     WakeLock="geo"
 
-    TISEnabled="false"
-    TcpConnectionTimeout="20"
     LPmode="false"
     CpColdStart="false"
     CpGuardTimeSec="1"
-    CpLppGuardTimeSec="1"
     ReAidingOnHotStart="false"
-    ReAidingIntervalSec="7200"
-    AutoSUPLVersionForNI="false"
     SuplSslMethod="SSLv23_NO_TLSv1_2"
     SuplEnable="true"
-    SuplMsbCapable="true"
-    SuplMsaCapable="true"
-    SuplEcidCapable="true"
-    SuplUseApn="true"
-    UseEcidEarfcn="false"
+    SuplUseApn="false"
     SuplTlsCertPath="/system/bin/gps.cer"
     SuplUT1Seconds="20"
     SuplUT2Seconds="20"
     SuplUT3Seconds="20"
-    SuplVersion="2"
-    SuplHmacHash="SHA256"
+    TcpConnectionTimeout="20"
     SuplLppCapable="false"
-    LppCpGlonassCapable="false"
-    SuplUseFwDns="true"
 
-    LbsEnable="false"
+    LbsEnable="true"
     LbsServer="BCMLS2.glpals.com"
+    RtiConfig="gllto.glpals.com:80/rtistatus3.dat"
     HttpSyncLto="true"
     LbsCellEnable="false"
-    RtiEnable="false"
     LtoDir="/data/system/gps/"
     LtoSyncThresholdDays="1"
 
     IgnoreJniTime="true"
     AssertEnabled="false"
+    IgnoreFwConfig="false"
+    DisablePglorNmeaCallback="true"
    />
 
   <gll
@@ -53,13 +43,12 @@
     FrqPlan="FRQ_PLAN_26MHZ_2PPM_26MHZ_300PPB"
     RfType="GL_RF_47531_BRCM_EXT_LNA"
     WarmStandbyTimeout1Seconds="10"
-    WarmStandbyTimeout2Seconds="23"
+    WarmStandbyTimeout2Seconds="15"
   >
   </gll>
 
   <gll_features
-       EnableLowPowerPmm="true"
-       EnableBeidou="false"
+    EnableLowPowerPmm="true"
   />
 
 </glgps>
