@@ -494,7 +494,7 @@ on fs
     chown system system /sys/class/ion_cma/ion_video_ext/isolated
 
 # Permissions for backlight
-    chmod 0660 /sys/class/backlight/panel/brightness
+    chmod 0664 /sys/class/backlight/panel/brightness
     chown system system /sys/class/backlight/panel/brightness
     chown system system /sys/class/backlight/panel/auto_brightness
     chown system system /sys/class/backlight/panel/auto_brightness_level
