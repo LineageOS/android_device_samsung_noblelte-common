@@ -177,4 +177,4 @@ endif
 BOARD_SEPOLICY_DIRS += device/samsung/noblelte-common/sepolicy
 
 # Seccomp filters
-BOARD_SECCOMP_POLICY += device/samsung/noblelte-common/seccomp
+BOARD_SECCOMP_POLICY := device/samsung/gts2-common/seccomp
