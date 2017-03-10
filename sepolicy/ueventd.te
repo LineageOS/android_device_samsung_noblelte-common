@@ -8,3 +8,5 @@ allow ueventd emmcblk_device:blk_file { relabelfrom relabelto create setattr unl
 
 # ???
 allow ueventd camera_device:file getattr;
+
+allow ueventd camera_device:file relabelto;
