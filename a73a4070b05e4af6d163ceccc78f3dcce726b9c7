@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6255ed_925e9de8",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7155
+      },
+      "writtenOn": "2017-03-10T11:34:52Z",
+      "side": 1,
+      "message": "unneeded",
+      "revId": "a73a4070b05e4af6d163ceccc78f3dcce726b9c7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
