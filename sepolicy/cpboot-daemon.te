@@ -14,6 +14,11 @@ allow cpboot-daemon self:capability { dac_override setuid setgid };
 allow cpboot-daemon kernel:system syslog_read;
 allow cpboot-daemon cgroup:dir create_dir_perms;
 
+# /sbin/cbd
+allow cpboot-daemon rootfs:file entrypoint;
+allow cpboot-daemon radio_block_device:blk_file read;
+allow cpboot-daemon radio_block_device:blk_file open;
+
 # /dev/log/*
 allow cpboot-daemon log_device:dir r_dir_perms;
 allow cpboot-daemon log_device:chr_file rw_file_perms;

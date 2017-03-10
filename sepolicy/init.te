@@ -18,3 +18,5 @@ allow init sysfs_mdnie_writable:lnk_file { read setattr };
 
 # read/chown camera firmware
 allow init camera_device:file { relabelto setattr };
+
+allow init debugfs:file write;
