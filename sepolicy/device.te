@@ -15,3 +15,6 @@ type seiren_device, dev_type;
 
 # /dev/s5p-smem
 type secmem_device, dev_type;
+
+# /dev/bbd*, /dev/ttyBCM[0-9]*
+type bbd_device, dev_type;
