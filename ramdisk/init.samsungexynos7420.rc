@@ -544,6 +544,9 @@ on fs
     chmod 0660 /dev/p3
     chown system system /dev/p3
 
+# NFC : create data/nfc for nv storage
+    mkdir /efs/sec_efs/nfc 0500 nfc nfc
+
 # terminal mode
     chmod 0660 /sys/class/android_usb/android0/terminal_version
     chown system system /sys/class/android_usb/android0/terminal_version
