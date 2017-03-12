@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter nobleltetmo, $(TARGET_DEVICE)),)
+ifneq ($(filter nobleltetmo nobleltejv,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
