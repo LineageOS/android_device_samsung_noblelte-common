@@ -4850,6 +4850,16 @@
     <path name="gain-incall_wb-headphone" />
   </path>
 
+  <path name="voice-bt-sco-headset">
+    <path name="incall_nb-bt-sco-headset" />
+    <path name="gain-incall_nb-bt-sco-headset" />
+  </path>
+
+  <path name="voice-bt-sco-headset-wb">
+    <path name="incall_wb-bt-sco-headset" />
+    <path name="gain-incall_wb-bt-sco-headset" />
+  </path>
+
   <path name="hdmi">
     <!-- TODO -->
   </path>
@@ -4915,6 +4925,16 @@
   <path name="voice-headset-mic-wb">
     <path name="incall_wb-headset-mic" />
     <path name="gain-incall_wb-headset-mic" />
+  </path>
+
+  <path name="voice-bt-sco-mic">
+    <path name="incall_nb-bt-sco-headset-in" />
+    <path name="gain-incall_nb-bt-sco-headset-in" />
+  </path>
+
+  <path name="voice-bt-sco-mic-wb">
+    <path name="incall_wb-bt-sco-headset-in" />
+    <path name="gain-incall_wb-bt-sco-headset-in" />
   </path>
 
   <path name="hdmi-mic">
