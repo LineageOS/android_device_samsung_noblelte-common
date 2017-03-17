@@ -4800,6 +4800,11 @@
 
   <!-- Paths for the audio HAL (we map this to the Samsung paths) -->
 
+  <path name="earpiece">
+    <path name="media-handset" />
+    <path name="gain-media-handset" />
+  </path>
+
   <path name="speaker">
     <path name="media-speaker" />
     <path name="gain-media-speaker" />
@@ -4855,6 +4860,11 @@
 
   <path name="bt-sco-headset">
     <path name="media-bt-sco-headset" />
+    <path name="gain-media-bt-sco-headset" />
+  </path>
+
+  <path name="bt-sco-headset-wb">
+    <path name="incall_wb-bt-sco-headset" />
     <path name="gain-media-bt-sco-headset" />
   </path>
 
@@ -4917,7 +4927,12 @@
   </path>
 
   <path name="bt-sco-mic">
-    <path name="media-bt-sco-headset-in" />
+    <path name="incall_nb-bt-sco-headset-in" />
+    <path name="gain-incall_nb-bt-sco-headset-in" />
+  </path>
+
+  <path name="bt-sco-mic-wb">
+    <path name="incall_wb-bt-sco-headset-in" />
     <path name="gain-media-bt-sco-headset-in" />
   </path>
 
