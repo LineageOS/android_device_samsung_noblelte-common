@@ -4858,6 +4858,11 @@
     <path name="gain-media-bt-sco-headset" />
   </path>
 
+  <path name="bt-sco-headset-wb">
+    <path name="incall_wb-bt-sco-headset" />
+    <path name="gain-media-bt-sco-headset" />
+  </path>
+
   <!-- Input stage -->
 
   <path name="earpiece-mic">
@@ -4917,7 +4922,12 @@
   </path>
 
   <path name="bt-sco-mic">
-    <path name="media-bt-sco-headset-in" />
+    <path name="incall_nb-bt-sco-headset-in" />
+    <path name="gain-incall_nb-bt-sco-headset-in" />
+  </path>
+
+  <path name="bt-sco-mic-wb">
+    <path name="incall_wb-bt-sco-headset-in" />
     <path name="gain-media-bt-sco-headset-in" />
   </path>
 
