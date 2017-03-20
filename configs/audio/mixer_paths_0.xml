@@ -4800,6 +4800,11 @@
 
   <!-- Paths for the audio HAL (we map this to the Samsung paths) -->
 
+  <path name="earpiece">
+    <path name="media-handset" />
+    <path name="gain-media-handset" />
+  </path>
+
   <path name="speaker">
     <path name="media-speaker" />
     <path name="gain-media-speaker" />
