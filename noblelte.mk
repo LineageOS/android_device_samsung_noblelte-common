@@ -162,9 +162,9 @@ PRODUCT_PACKAGES += \
     charger_res_images \
     cm_charger_res_images
 
-# CM gesture actions
+# Samsung Doze
 PRODUCT_PACKAGES += \
-    CMActions
+    SamsungDoze
 
 # Samsung debug level
 #ADDITIONAL_DEFAULT_PROPERTIES += \
