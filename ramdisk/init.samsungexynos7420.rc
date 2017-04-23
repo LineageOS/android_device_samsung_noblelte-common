@@ -370,6 +370,8 @@ on boot
 
     chown bluetooth net_bt_stack /dev/ttySAC4
     chmod 0660 /dev/ttySAC4
+    chmod 0660 /dev/uhid
+    chmod 0660 /dev/uinput
 # mobicore
     chmod 0660 /dev/t-base-tui
     chown system system /dev/t-base-tui
