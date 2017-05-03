@@ -18,3 +18,6 @@ type secmem_device, dev_type;
 
 # /dev/bbd*, /dev/ttyBCM[0-9]*
 type bbd_device, dev_type;
+
+# /dev/vfsspi
+type fingerprint_device, dev_type;

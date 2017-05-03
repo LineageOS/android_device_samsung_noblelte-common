@@ -1,0 +1,2 @@
+# modemloader
+sys.mobicoredaemon.enable         u:object_r:tee_prop:s0
