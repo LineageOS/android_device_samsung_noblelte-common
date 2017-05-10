@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a486d77_3f49ced0",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 2320
+      },
+      "writtenOn": "2017-05-10T15:42:57Z",
+      "side": 1,
+      "message": "bluetooth\\.",
+      "range": {
+        "startLine": 91,
+        "startChar": 0,
+        "endLine": 91,
+        "endChar": 90
+      },
+      "revId": "85e41002ec95f0776c910209fa7ef855e8983b29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a486d77_1f4612c0",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2320
+      },
+      "writtenOn": "2017-05-10T15:42:57Z",
+      "side": 1,
+      "message": "You missed this one too :)",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 45
+      },
+      "revId": "85e41002ec95f0776c910209fa7ef855e8983b29",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
