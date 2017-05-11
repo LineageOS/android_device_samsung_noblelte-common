@@ -6,5 +6,6 @@ allow ueventd sysfs_multipdp_writable:file rw_file_perms;
 
 allow ueventd emmcblk_device:blk_file { relabelfrom relabelto create setattr unlink };
 
-# ???
-allow ueventd camera_device:file getattr;
+# read/chown camera firmware
+allow ueventd sysfs_camera_writable:file { relabelto getattr rw_file_perms };
+allow ueventd sysfs_camera_writable:filesystem associate;
