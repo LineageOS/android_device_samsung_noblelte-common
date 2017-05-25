@@ -4,6 +4,7 @@ import init.baseband.rc
 import init.carrier.rc
 import init.samsung.rc
 import init.power.rc
+import init.rilcommon.rc
 
 on early-init
     mount debugfs /sys/kernel/debug /sys/kernel/debug
