@@ -73,7 +73,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libsecril-client \
-    libsecril-client-sap
+    libsecril-client-sap \
+    modemloader
 
 PRODUCT_PACKAGES += \
     SamsungServiceMode
