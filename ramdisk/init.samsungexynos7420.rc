@@ -767,6 +767,10 @@ on property:sys.boot_completed=1
     write /proc/sys/vm/dirty_bytes 62914560
     write /proc/sys/vm/dirty_background_bytes 20971520
 
+# Transition to BFQ for UX
+on property:sys.boot_completed=1
+    setprop sys.io.scheduler "bfq"
+
 service battery_charger /sbin/healthd -c
     class charger
     critical
