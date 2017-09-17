@@ -41,7 +41,7 @@
 /dev/CEC                  0660   system     system
 
 # JPEG
-/dev/m2m1shot_jpeg	  0660   media      media
+/dev/m2m1shot_jpeg	  0660   cameraserver      media
 /dev/video13              0660   media      media
 /dev/video14              0660   media      media
 
